@@ -1,4 +1,5 @@
-var spinnerApp = angular.module('spinnerMod', []);
+
+var spinnerApp = angular.module('spinnerExample', ['spinnerMod']);
 
 spinnerApp.controller('spinnerCtrl', ['$scope', '$interval',  function($scope, $interval){
 	$scope.running= false;

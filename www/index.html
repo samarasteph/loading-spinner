@@ -1,23 +1,21 @@
 <html>
 <head>
 	<title>Loading spinner</title>
-	<link rel="stylesheet" href="spinner.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.min.js" integrity="sha512-aqezuLfILQDgqwoABeA4HLWkA9j14XWQSWwNAF7KlxXZuZKy2sSughYfFIaVZMlJ+KV2Le4caMCeeVXjHl5k3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular-route.min.js" integrity="sha512-2IJ88fP6zQsi9tiNjQgG+AeNL4/DnPrwMLhNcf2TcvU3LKdwGWwRgm/3ALpGP3cdIwgPMWkoqgDgrdDCtfkZSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="angular-spinner.js"></script>
-</head>
-<body>
+  <script src="spinner/directive.js"></script>
+  <script src="controler.js"></script>
+</head >
+<body style="background: grey; color: white">
+  <div>Loading spinner</div> 
 
-  <div>Loading spinner examples</div> 
-
-  <h3>Angular JS example</h3>
-	<div ng-app="spinnerMod">
+  <h3>Angular JS</h3>
+	<div ng-app="spinnerExample">
 		<div ng-controller="spinnerCtrl">
 			<button ng-click="run()" ng-class="{'disabled': running}" >Long routine</button>
 			<div ng-if="running">Waiting {{seconds}} seconds...</div>
-  		<div class="lds-ring" id="angular-spinner" ng-show="running"><div></div><div></div><div></div><div></div></div>
-			
+			<spinner start="running"></spinner>		
 		</div>
 
   </div>
